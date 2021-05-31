@@ -13,21 +13,22 @@ app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
-    res.send({message: 'hello world!'})
+  res.send({ message: 'hello world!' })
 })
 
 app.get('/name', (req, res) => {
-    res.send({message: 'Hi Terry!'})
+  res.send({ message: 'Hi Terry!' })
 })
 
 app.post('/', (req, res) => {
-    console.log(req.body)
-    res.send({message: 'ok'})
+  console.log(req.body)
+  res.send({ message: 'ok' })
 })
 
 export const start = () => {
-    const port = '3000'
-    app.listen(port, () => {
-        console.log(`listening on port ${port}`)
-    })
+  const port = '3000'
+
+  app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+  })
 }
